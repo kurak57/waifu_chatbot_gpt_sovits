@@ -1,0 +1,19 @@
+# Ignore virtual environment directories
+venv/
+env/
+
+# Jika menggunakan pipenv
+.Python
+pipenv.lock
+
+# Jika menggunakan poetry
+poetry.lock
+
+# Ignore environment variable files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+test_llm.py
