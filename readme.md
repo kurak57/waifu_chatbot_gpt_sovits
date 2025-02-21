@@ -1,4 +1,4 @@
-# AI Voice Chatbot
+# Waifu Voice Chatbot
 
 ## Prerequisites
 Before running this project, you need to install and start GPT-SoVITS. You can find the repository here: [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS).
@@ -18,7 +18,8 @@ Before running this project, you need to install and start GPT-SoVITS. You can f
 
 ## Usage
 1. Start GPT-SoVITS before running the chatbot.
-2. Run the chatbot script:
+3. This project uses LM Studio to run the LLM. The default model used is Meta-Llama-3.1-8B-Instruct, but you can change it according to your needs.
+2. Run the waifu chatbot script:
    ```sh
    python main.py
    ```
