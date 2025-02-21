@@ -7,9 +7,9 @@ from gradio_client import Client, file
 load_dotenv()
 
 # AI & TTS Configuration
-AI_LANGUAGE = "Japanese"
-CHARACTER_NAME = "carlotta"
-SPEAKER_LANGUAGE = "ja"
+AI_LANGUAGE = "Japanese" # You could change to : "Japanese", "English" or "Chinese"
+CHARACTER_NAME = "carlotta" #rename it based on your audio file
+SPEAKER_LANGUAGE = "ja" # You can change it based on Google code for language.
 
 # Reference Audio File
 REF_AUDIO_PATH = os.getenv("REF_AUDIO_PATH", "")
