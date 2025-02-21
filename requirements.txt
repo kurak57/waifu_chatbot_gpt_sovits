@@ -1,0 +1,5 @@
+openai
+gradio_client
+speechrecognition
+playsound
+python-dotenv

@@ -13,7 +13,7 @@ SPEAKER_LANGUAGE = "ja"
 
 # Reference Audio File
 REF_AUDIO_PATH = os.getenv("REF_AUDIO_PATH", "")
-REF_AUDIO = file(rf"{REF_AUDIO_PATH}\{CHARACTER_NAME}.wav")
+REF_AUDIO = file(f"./character_audio/{CHARACTER_NAME}.wav")
 
 # API Clients
 LLM_CLIENT = OpenAI(
