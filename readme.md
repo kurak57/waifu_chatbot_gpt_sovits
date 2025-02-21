@@ -33,7 +33,3 @@ Edit the `.env` file to set up:
 - AI-powered chatbot responses
 - Text-to-Speech synthesis using GPT-SoVITS
 - Maintains chat history
-
-## License
-This project is licensed under the MIT License.
-
