@@ -1,5 +1,5 @@
 import playsound
-from config import TTS_CLIENT, REF_AUDIO, AI_LANGUAGE
+from src.config import TTS_CLIENT, REF_AUDIO, AI_LANGUAGE
 
 def text_to_speech(text):
     """Converts text to speech and plays the generated audio."""

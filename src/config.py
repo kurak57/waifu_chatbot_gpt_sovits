@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-from gradio_client import Client, file
+from gradio_client import Client, handle_file
+from src import personality
 
 # Load environment variables from .env file
 load_dotenv()
@@ -12,8 +13,7 @@ CHARACTER_NAME = "carlotta" #rename it based on your audio file
 SPEAKER_LANGUAGE = "ja" # You can change it based on Google code for language.
 
 # Reference Audio File
-REF_AUDIO_PATH = os.getenv("REF_AUDIO_PATH", "")
-REF_AUDIO = file(f"./character_audio/{CHARACTER_NAME}.wav")
+REF_AUDIO = handle_file(f"./character_audio/{CHARACTER_NAME}.wav")
 
 # API Clients
 LLM_CLIENT = OpenAI(
@@ -24,8 +24,7 @@ LLM_CLIENT = OpenAI(
 TTS_CLIENT = Client(os.getenv("TTS_BASE_URL", "http://localhost:9872/"))
 
 # Load Personality
-personality_module = __import__("personality")
-CHARACTER = getattr(personality_module, CHARACTER_NAME)
+CHARACTER = getattr(personality, CHARACTER_NAME)
 
 # Chat history initialization
 chat_history = [{"role": "system", "content": CHARACTER}]

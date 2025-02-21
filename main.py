@@ -1,37 +1,12 @@
-import os
-from dotenv import load_dotenv
-from src.ai import AIChatbot
-from src.speech import SpeechRecognition
-from src.tts import TextToSpeech
+from src.speech import recognize_speech
+from src.ai import get_ai_response
+from src.tts import text_to_speech
+from src.config import CHARACTER_NAME
 
-# Load environment variables
-load_dotenv()
-
-# Initialize components
-chatbot = AIChatbot()
-speech_recognition = SpeechRecognition()
-tts = TextToSpeech()
-
-def main():
-    print("Your waifu is ready to talk with you...")
-    
-    while True:
-        try:
-            user_input = speech_recognition.listen()
-            # if user_input.lower() in ["exit", "quit", "stop"]:
-            #     print("Exiting chatbot...")
-            #     break
-            
-            response = chatbot.get_response(user_input)
-            print(f"Bot: {response}")
-            
-            tts.speak(response)
-        
-        except KeyboardInterrupt:
-            print("\nChatbot stopped by user.")
-            break
-        except Exception as e:
-            print(f"Error: {e}")
-
-if __name__ == "__main__":
-    main()
+# Continuous AI interaction loop
+while True:
+    command = recognize_speech()
+    if command:
+        response = get_ai_response(command)
+        print(f"{CHARACTER_NAME.title()}: {response}")
+        text_to_speech(response)

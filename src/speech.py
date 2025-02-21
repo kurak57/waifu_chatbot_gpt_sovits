@@ -1,5 +1,5 @@
 import speech_recognition as sr
-from config import SPEAKER_LANGUAGE
+from src.config import SPEAKER_LANGUAGE
 
 def recognize_speech():
     """Captures voice from the microphone and converts it into text (Japanese)."""

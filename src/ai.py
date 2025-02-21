@@ -1,4 +1,4 @@
-from config import LLM_CLIENT, chat_history
+from src.config import LLM_CLIENT, chat_history
 
 def get_ai_response(command):
     """Sends user input to LLM with chat history and retrieves the response."""
